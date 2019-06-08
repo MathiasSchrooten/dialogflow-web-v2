@@ -17,12 +17,13 @@
                     
                     <!-- Component iterator (Dialogflow Gateway Feature) -->
                     <tr v-for="component in m.queryResult.fulfillmentMessages">
+
                         <td>
                             <!-- Default / Webhook bubble -->
-                            <Bubble :text="component.content" v-if="component.name == 'DEFAULT'" />
+                            <Bubble :text="component.text.text[0]" />
 
                             <!-- Simple Response -->
-                            <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
+                            <Bubble :text="component.text.text[0] || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
                             
                             <!-- Card -->
                             <Card :title="component.content.title" :subtitle="component.content.subtitle" :image="component.content.image" :text="component.content.formattedText" :button="component.content.buttons[0]" v-if="component.name == 'CARD'" />
@@ -267,10 +268,11 @@ export default {
             fetch('https://151583e1.ngrok.io/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
             .then(response => {
                 console.log("response.json() = ");
-                console.log(response.json());
-                return response.json()
+                let res = response.json();
+                return res;
             })
             .then(response => {
+                console.log(response.queryResult.fulfillmentMessages);
                 this.messages.push(response);
                 this.handle(response); // <- trigger the handle function (explanation below)
                 this.loading = false
@@ -283,8 +285,6 @@ export default {
                 let text; // <- init a text variables
 
                 /* Set the text variable according to component name */
-                if(response.queryResult.fulfillmentMessages[component].name == 'DEFAULT') text = response.queryResult.fulfillmentMessages[component].content
-                if(response.queryResult.fulfillmentMessages[component].name == 'SIMPLE_RESPONSE') text = response.queryResult.fulfillmentMessages[component].content.textToSpeech
 
                 let speech = new SpeechSynthesisUtterance(text);
                 speech.voiceURI = 'native'; // <- change this, to get a different voice
