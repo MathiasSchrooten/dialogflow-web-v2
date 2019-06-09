@@ -20,11 +20,12 @@
 
                         <td>
                             <!-- Default / Webhook bubble -->
-                            <Bubble :text="component.text.text[0]" />
+                            <!--{{component}}-->
+                            <Bubble :text="component.content" v-if="component.name == 'DEFAULT'" />
 
-                            <!-- Simple Response -->
-                            <Bubble :text="component.text.text[0] || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
-                            
+                            <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
+                            <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
+
                             <!-- Card -->
                             <Card :title="component.content.title" :subtitle="component.content.subtitle" :image="component.content.image" :text="component.content.formattedText" :button="component.content.buttons[0]" v-if="component.name == 'CARD'" />
                             
@@ -285,12 +286,16 @@ export default {
                 let text; // <- init a text variables
 
                 /* Set the text variable according to component name */
+                if(response.queryResult.fulfillmentMessages[component].name == 'DEFAULT') text = response.queryResult.fulfillmentMessages[component].content
+                if(response.queryResult.fulfillmentMessages[component].name == 'SIMPLE_RESPONSE') text = response.queryResult.fulfillmentMessages[component].content.textToSpeech
+
 
                 let speech = new SpeechSynthesisUtterance(text);
                 speech.voiceURI = 'native'; // <- change this, to get a different voice
 
                 /* This "hack" is used to format our lang format, to some other lang format (example: en -> en_EN). Mainly for Safari, Firefox and Edge */
-                speech.lang = this.lang() + '-' + this.lang().toUpperCase();
+                speech.lang = 'ko';
+                //speech.lang = this.lang() + '-' + this.lang().toUpperCase();
 
                 if(!this.muted) window.speechSynthesis.speak(speech) // <- if app is not muted, speak out the speech
             }
