@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Components/App/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.vue" afterDir="false" />
-    </list>
+    <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#5361#5407#0" expanded="true" />
               </folding>
@@ -206,16 +204,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560015069560</updated>
-      <workItem from="1560015071285" duration="10250000" />
+      <workItem from="1560015071285" duration="10782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10250000" />
+    <option name="totallyTimeSpent" value="10782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-62" y="-1139" width="1292" height="1090" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19433516" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -302,7 +299,7 @@
     <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#5361#5407#0" expanded="true" />
           </folding>
