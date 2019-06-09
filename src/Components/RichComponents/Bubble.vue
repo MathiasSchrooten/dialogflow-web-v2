@@ -2,7 +2,7 @@
     <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
         <button v-if="from != 'me'" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
-            <img style="width:10px; height:10px;" src="/assets/play.png" alt="">
+            <img style="width:10px; height:10px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
         </button>
     </span>
 </template>
