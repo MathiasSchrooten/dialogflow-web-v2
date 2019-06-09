@@ -12,7 +12,7 @@
                 <table v-for="m in messages" class="message">
                     <tr>
                         <!-- My message -->
-                        <td><Bubble :text="m.queryResult.queryText" from="me" /></td>
+                        <td><Bubble :text="m.queryResult.queryText"  from="me" /></td>
                     </tr>
                     
                     <!-- Component iterator (Dialogflow Gateway Feature) -->
@@ -21,7 +21,7 @@
                         <td>
                             <!-- Default / Webhook bubble -->
                             <!--{{component}}-->
-                            <Bubble :text="component.content" v-if="component.name == 'DEFAULT'" />
+                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name == 'DEFAULT'" />
 
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
@@ -117,6 +117,9 @@ body
 .message
     width: 100%
 
+
+
+
 .audio-toggle
     position: fixed
     top: 0
@@ -167,16 +170,24 @@ export default {
         List,
         Picture
     },
-    data(){
+    data() {
         return {
             app: null,
             messages: [],
             language: '',
             session: '',
             muted: this.config.app.muted,
-            loading: false
-        }
+            loading: false,
+            mp3url: '',
+            hey: 'hey'
+        };
     },
+    // playSound (sound) {
+    //     if(sound) {
+    //         var audio = new Audio(sound);
+    //         audio.play();
+    //     }
+    // },
     created(){
         /* If history is enabled, the messages are retrieved from localStorage */
         if(this.history() && localStorage.getItem('message_history') !== null){
@@ -269,8 +280,7 @@ export default {
             fetch('https://af3af4fa.ngrok.io/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
             .then(response => {
                 console.log("response.json() = ");
-                let res = response.json();
-                return res;
+                return response.json();
             })
             .then(response => {
                 console.log(response.queryResult.fulfillmentMessages);
