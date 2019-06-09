@@ -30,8 +30,8 @@
           <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="285" column="70" lean-forward="true" selection-start-line="285" selection-start-column="70" selection-end-line="285" selection-end-column="70" />
+                <state relative-caret-position="425">
+                  <caret line="293" column="57" lean-forward="true" selection-start-line="293" selection-start-column="57" selection-end-line="293" selection-end-column="57" />
                   <folding>
                     <element signature="n#style#0;n#!!top" />
                   </folding>
@@ -153,7 +153,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-723" />
+    <option name="x" value="-412" />
     <option name="y" value="-1310" />
     <option name="width" value="1657" />
     <option name="height" value="1258" />
@@ -250,15 +250,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560015069560</updated>
-      <workItem from="1560015071285" duration="27715000" />
+      <workItem from="1560015071285" duration="28214000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27715000" />
+    <option name="totallyTimeSpent" value="28214000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-723" y="-1310" width="1657" height="1258" extended-state="0" />
+    <frame x="-412" y="-1310" width="1657" height="1258" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.150978" />
@@ -396,8 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="285" column="70" lean-forward="true" selection-start-line="285" selection-start-column="70" selection-end-line="285" selection-end-column="70" />
+        <state relative-caret-position="425">
+          <caret line="293" column="57" lean-forward="true" selection-start-line="293" selection-start-column="57" selection-end-line="293" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#!!top" />
           </folding>
