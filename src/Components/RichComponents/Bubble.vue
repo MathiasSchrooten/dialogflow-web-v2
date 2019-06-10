@@ -2,13 +2,17 @@
     <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
         <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
-            {{mp3url}}
+
             <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
             <audio id="audio" src=""></audio>
         </button>
+        <br v-if="imageUrl !== null"/>
+        <img style="margin-top: 15px; width: 100%; max-width: 200px;" v-if="imageUrl != null" v-bind:src="imageUrl" alt="">
 
-        <img style="margin-top: 15px;" v-if="imageUrl !== ''" v-bind:src="imageUrl" alt="">
-        <!--<span v-if="imageUrl !== ''">-->
+        <span style="font-size: 0.8em" v-if="pdfUrl != null">
+            <a v-bind:href="pdfUrl" target="_blank">Click to view the pdf</a>
+        </span>
+        <!--<button v-if="pdfUrl != null">PDF FOUND</button>-->
 
         <!--</span>-->
 
@@ -24,7 +28,6 @@
     display: inline-block
     position: relative
     background-color: white
-
 
     &::before
         content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyOHB4IiB2aWV3Qm94PSIwIDAgMjQgMjgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjQuMDAwMDAwLCAtMTAxLjAwMDAwMCkiPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC4wMDAwMDAsIDEwMS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjUsMS4yMTMzNzE0OCBDMC41LDcuNjA2NjkwNjcgMC41LDguNzU1Nzk0NzggMC41LDI2LjkzMjQ3OTIgTDIyLjU4NjkzMDIsOC41MjY3MDQwNCBDMTMuMDQwODkxNSw4LjU4NTgzODUzIDUuNjY5NjIyMDQsNi4xNTI1ODA2MyAwLjUsMS4yMTMzNzE0OCBaIiBzdHJva2U9IiNFOEVBRUQiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIgcG9pbnRzPSIxIDkgMjQgOSAxIDI4Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==")
@@ -72,12 +75,11 @@
 <script>
 export default {
     name: 'Bubble',
-    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl'],
+    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl', 'pdfUrl'],
     data: function() {
         return {
             hey: 'hey',
-            soundPlaying: false,
-            imageUrl: ''
+            soundPlaying: false
         }
     },
     computed: {

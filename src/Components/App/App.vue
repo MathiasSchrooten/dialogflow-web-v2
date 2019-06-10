@@ -21,11 +21,14 @@
                         <td>
                             <!-- Default / Webhook bubble -->
                             <!--{{component}}-->
-                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name == 'MP3'" />
+                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />
 
-                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name == 'DEFAULT'" />
+                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'DEFAULT'" />
 
-                            <Bubble :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name == 'image'" />
+                            <Bubble :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />
+
+                            <!--<span v-if="component.name=== 'pdf'">pdf detected {{component.pdfUrl}}</span>-->
+                            <Bubble :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />
 
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
@@ -184,6 +187,7 @@ export default {
             loading: false,
             mp3url: '',
             imageUrl: '',
+            pdfUrl: '',
             hey: 'hey'
         };
     },
