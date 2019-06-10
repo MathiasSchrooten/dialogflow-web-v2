@@ -1,8 +1,9 @@
 <template>
     <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
-        <button v-if="from != 'me'" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
-            <img style="width:10px; height:10px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
+        <button name="playButton" v-if="from != 'me'" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
+            <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
+            <audio id="audio" src=""></audio>
         </button>
     </span>
 </template>
@@ -67,16 +68,26 @@ export default {
     props: ['text', 'from', 'loading', 'mp3url'],
     data: function() {
         return {
-            hey: 'hey'
+            hey: 'hey',
+            soundPlaying: false
         }
     },
     methods: {
         playSound (sound) {
-            if(sound) {
-                console.log("mp3link = ");
-                console.log(this.mp3url);
-                var audio = new Audio(this.mp3url);
-                audio.play();
+            this.audio = new Audio(this.mp3url);
+
+            if (!this.soundPlaying) {
+                console.log("now playing audio!");
+                this.audio.play();
+                this.soundPlaying = true;
+            } else {
+                this.soundPlaying = false;
+                console.log("now stopping audio!");
+
+
+
+                this.audio.pause();
+                this.audio = null;
             }
         }
     }
