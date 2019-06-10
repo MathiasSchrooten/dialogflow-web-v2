@@ -1,5 +1,8 @@
 <template>
-    <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
+    <span>
+        <img v-if="from == 'bot'" style="float: left; padding-top: 10px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
+
+        <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
         <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
 
@@ -13,12 +16,17 @@
             <a v-bind:href="pdfUrl" target="_blank">클릭해서 PDF 보기</a>
         </span>
 
-        <video v-if="videoUrl != null" v-bind:src="videoUrl" id="video-container" width="100%" controls></video>
+        <video v-if="videoUrl != null" v-bind:src="videoUrl" id="video-container" style="width:100%;max-width: 300px;" controls></video>
 
     </span>
+        <img v-if="from == 'me'" style="float: right; padding-top: 30px; padding-right: 5px; margin-left: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+
+    </span>
+
 </template>
 
 <style lang="sass" scoped>
+
 .bubble
     padding: 12px
     border-radius: 40px
@@ -38,9 +46,18 @@
 
     &:not(.me)
         margin-bottom: 10px
+        float: left
 
     &.me
-        float: right
+        @media(min-width: 370px)
+            position: absolute
+            right: 15%
+
+        @media (min-width: 1300px)
+            position: absolute
+            right: 8%
+
+
         background-color: #F1F3F4
         border: 1px solid #F1F3F4
         color: #5F6368
@@ -92,37 +109,14 @@ export default {
                     isPlaying: false
                 }
             ]
-        },
-      file: function() {
-          console.log("mp3url = " + this.mp3url);
-          return new Audio(this.mp3url);
-      }
+        }
     },
     methods: {
-        playSound (sound) {
-            this.audio = new Audio(this.mp3url);
-
-            if (!this.soundPlaying) {
-                console.log("now playing audio!");
-                this.audio.play();
-                this.soundPlaying = true;
-            } else {
-                this.soundPlaying = false;
-                console.log("now stopping audio!");
-
-
-
-                this.audio.pause();
-                this.audio = null;
-            }
-        },
         play(audio) {
-            console.log("play");
             audio.isPlaying = true;
             audio.file.play();
         },
         pause (audio) {
-            console.log("pause");
             audio.isPlaying = false;
             audio.file.pause();
         }

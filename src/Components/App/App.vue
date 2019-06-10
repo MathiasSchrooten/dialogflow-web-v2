@@ -21,24 +21,24 @@
                         <td>
                             <!-- Default / Webhook bubble -->
                             <!--{{component}}-->
-                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />
+                            <Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />
 
-                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'DEFAULT'" />
+                            <Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'DEFAULT'" />
 
-                            <Bubble :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />
+                            <Bubble from="bot" :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />
 
                             <!--<span v-if="component.name=== 'pdf'">pdf detected {{component.pdfUrl}}</span>-->
-                            <Bubble :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />
+                            <Bubble from="bot" :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />
 
 
-                            <Bubble :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />
+                            <Bubble from="bot" :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />
 
 
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
-                            <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
+                            <Bubble from="bot" :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
 
                             <!-- Card -->
-                            <Card :title="component.content.title" :subtitle="component.content.subtitle" :image="component.content.image" :text="component.content.formattedText" :button="component.content.buttons[0]" v-if="component.name == 'CARD'" />
+                            <Card from="bot" :title="component.content.title" :subtitle="component.content.subtitle" :image="component.content.image" :text="component.content.formattedText" :button="component.content.buttons[0]" v-if="component.name == 'CARD'" />
                             
                             <!-- Carousel layout and cards -->
                             <div class="carousel" v-if="component.name == 'CAROUSEL_CARD'">
@@ -73,9 +73,9 @@
         <ChatInput @submit="send" :suggestions="suggestions"></ChatInput>
 
         <!-- Audio toggle (on the top right corner), used to toggle the audio output, default mode is defined in the settings -->
-        <div :aria-label="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" :title="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" class="audio-toggle" @click="muted = !muted">
-            <i aria-hidden="true" class="material-icons" v-if="!muted">volume_up</i>
-            <i aria-hidden="true" class="material-icons" v-else>volume_off</i>
+        <!--<div :aria-label="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" :title="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" class="audio-toggle" @click="muted = !muted">-->
+            <!--<i aria-hidden="true" class="material-icons" v-if="!muted">volume_up</i>-->
+            <!--<i aria-hidden="true" class="material-icons" v-else>volume_off</i>-->
         </div>
     </main>
 </template>
@@ -91,7 +91,7 @@ body
     background-color: white
 
 .container
-    max-width: 500px
+    max-width: 800px
     margin-left: auto
     margin-right: auto
     padding: 16px
