@@ -1,10 +1,17 @@
 <template>
     <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
-        <button name="playButton" v-if="from != 'me'" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
+        <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
+            {{mp3url}}
             <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
             <audio id="audio" src=""></audio>
         </button>
+
+        <img style="margin-top: 15px;" v-if="imageUrl !== ''" v-bind:src="imageUrl" alt="">
+        <!--<span v-if="imageUrl !== ''">-->
+
+        <!--</span>-->
+
     </span>
 </template>
 
@@ -65,12 +72,22 @@
 <script>
 export default {
     name: 'Bubble',
-    props: ['text', 'from', 'loading', 'mp3url'],
+    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl'],
     data: function() {
         return {
             hey: 'hey',
-            soundPlaying: false
+            soundPlaying: false,
+            imageUrl: ''
         }
+    },
+    computed: {
+      // imageUrlFilledIn: function() {
+      //     if (this.imageUrl != '' && this.imageUrl != "") {
+      //         return true;
+      //     } else {
+      //         return false;
+      //     }
+      // }
     },
     methods: {
         playSound (sound) {

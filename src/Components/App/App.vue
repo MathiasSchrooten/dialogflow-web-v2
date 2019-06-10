@@ -21,7 +21,11 @@
                         <td>
                             <!-- Default / Webhook bubble -->
                             <!--{{component}}-->
+                            <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name == 'MP3'" />
+
                             <Bubble :text="component.content" :mp3url="component.mp3url"  v-if="component.name == 'DEFAULT'" />
+
+                            <Bubble :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name == 'image'" />
 
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
@@ -179,6 +183,7 @@ export default {
             muted: this.config.app.muted,
             loading: false,
             mp3url: '',
+            imageUrl: '',
             hey: 'hey'
         };
     },
@@ -291,24 +296,7 @@ export default {
             });
         },
         handle(response){
-            /* This function is used for speech output */
-            // for (let component in response.queryResult.fulfillmentMessages){
-            //     let text; // <- init a text variables
-            //
-            //     /* Set the text variable according to component name */
-            //     if(response.queryResult.fulfillmentMessages[component].name == 'DEFAULT') text = response.queryResult.fulfillmentMessages[component].content
-            //     if(response.queryResult.fulfillmentMessages[component].name == 'SIMPLE_RESPONSE') text = response.queryResult.fulfillmentMessages[component].content.textToSpeech
-            //
-            //
-            //     let speech = new SpeechSynthesisUtterance(text);
-            //     speech.voiceURI = 'native'; // <- change this, to get a different voice
-            //
-            //     /* This "hack" is used to format our lang format, to some other lang format (example: en -> en_EN). Mainly for Safari, Firefox and Edge */
-            //     speech.lang = 'ko';
-            //     //speech.lang = this.lang() + '-' + this.lang().toUpperCase();
-            //
-            //     if(!this.muted) window.speechSynthesis.speak(speech) // <- if app is not muted, speak out the speech
-            // }
+
         }
     }
 }
