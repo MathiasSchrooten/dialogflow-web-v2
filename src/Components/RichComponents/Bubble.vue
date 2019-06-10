@@ -1,20 +1,19 @@
 <template>
     <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
         {{text}}
-        <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"><span class="fa fa-play-circle-o"></span>
+        <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
 
             <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
-            <audio id="audio" src=""></audio>
+            <!--<audio id="audio" src=""></audio>-->
         </button>
         <br v-if="imageUrl !== null"/>
         <img style="margin-top: 15px; width: 100%; max-width: 200px;" v-if="imageUrl != null" v-bind:src="imageUrl" alt="">
 
         <span style="font-size: 0.8em" v-if="pdfUrl != null">
-            <a v-bind:href="pdfUrl" target="_blank">Click to view the pdf</a>
+            <a v-bind:href="pdfUrl" target="_blank">클릭해서 PDF 보기</a>
         </span>
-        <!--<button v-if="pdfUrl != null">PDF FOUND</button>-->
 
-        <!--</span>-->
+        <video v-if="videoUrl != null" v-bind:src="videoUrl" id="video-container" width="100%" controls></video>
 
     </span>
 </template>
@@ -75,21 +74,29 @@
 <script>
 export default {
     name: 'Bubble',
-    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl', 'pdfUrl'],
+    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl', 'pdfUrl', 'videoUrl'],
     data: function() {
         return {
             hey: 'hey',
-            soundPlaying: false
+            isPlaying: false,
+            file: null
         }
     },
     computed: {
-      // imageUrlFilledIn: function() {
-      //     if (this.imageUrl != '' && this.imageUrl != "") {
-      //         return true;
-      //     } else {
-      //         return false;
-      //     }
-      // }
+        audios: function() {
+            return [
+                {
+                    id: 'mp3',
+                    name: 'mp3name',
+                    file: new Audio(this.mp3url),
+                    isPlaying: false
+                }
+            ]
+        },
+      file: function() {
+          console.log("mp3url = " + this.mp3url);
+          return new Audio(this.mp3url);
+      }
     },
     methods: {
         playSound (sound) {
@@ -108,7 +115,17 @@ export default {
                 this.audio.pause();
                 this.audio = null;
             }
+        },
+        play(audio) {
+            console.log("play");
+            audio.isPlaying = true;
+            audio.file.play();
+        },
+        pause (audio) {
+            console.log("pause");
+            audio.isPlaying = false;
+            audio.file.pause();
         }
-    }
+     }
 }
 </script>

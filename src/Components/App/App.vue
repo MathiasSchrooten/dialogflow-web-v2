@@ -30,6 +30,10 @@
                             <!--<span v-if="component.name=== 'pdf'">pdf detected {{component.pdfUrl}}</span>-->
                             <Bubble :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />
 
+
+                            <Bubble :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />
+
+
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
 
@@ -188,6 +192,7 @@ export default {
             mp3url: '',
             imageUrl: '',
             pdfUrl: '',
+            videoUrl: '',
             hey: 'hey'
         };
     },
