@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5084746">
+    <splitter split-orientation="horizontal" split-proportion="0.6815287">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Suggestion.vue" pinned="false" current-in-tab="false">
@@ -31,8 +31,8 @@
           <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="294" column="31" lean-forward="true" selection-start-line="294" selection-start-column="31" selection-end-line="294" selection-end-column="31" />
+                <state relative-caret-position="95">
+                  <caret line="293" column="46" lean-forward="true" selection-start-line="293" selection-start-column="46" selection-end-line="293" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -166,10 +166,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="388" />
-    <option name="y" value="35" />
-    <option name="width" value="940" />
-    <option name="height" value="955" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -266,18 +265,17 @@
       <workItem from="1560015071285" duration="31879000" />
       <workItem from="1560157863356" duration="18451000" />
       <workItem from="1560238273972" duration="24000" />
-      <workItem from="1560255871685" duration="12000" />
+      <workItem from="1560255871685" duration="2155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50366000" />
+    <option name="totallyTimeSpent" value="52509000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="974" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="727" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09644364" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12708499" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -285,7 +283,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30216646" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.42063493" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -558,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="294" column="31" lean-forward="true" selection-start-line="294" selection-start-column="31" selection-end-line="294" selection-end-column="31" />
+        <state relative-caret-position="95">
+          <caret line="293" column="46" lean-forward="true" selection-start-line="293" selection-start-column="46" selection-end-line="293" selection-end-column="46" />
         </state>
       </provider>
     </entry>
