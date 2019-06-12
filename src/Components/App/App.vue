@@ -76,7 +76,7 @@
         <!--<div :aria-label="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" :title="(config.i18n[lang()] && config.i18n[lang()].inputTitle) || config.i18n[config.app.fallback_lang].muteTitle" class="audio-toggle" @click="muted = !muted">-->
             <!--<i aria-hidden="true" class="material-icons" v-if="!muted">volume_up</i>-->
             <!--<i aria-hidden="true" class="material-icons" v-else>volume_off</i>-->
-        </div>
+        <!--</div>-->
     </main>
 </template>
 
