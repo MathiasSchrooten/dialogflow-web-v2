@@ -14,6 +14,8 @@
     font-weight: 500
     margin-bottom: 12px
 
+
+
 .suggestion[href]
     background: #3C4043
     box-shadow: 0 3px 6px 2px rgba(66,133,244,0.15)
