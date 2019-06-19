@@ -13,7 +13,8 @@ Vue.prototype.config = config;// <- set config to global scope
 Vue.prototype.history = () => {
     try {
         localStorage.getItem('check');
-        return true
+        //TODO: change this to true to enable caching & history
+        return false
     }
 
     catch {

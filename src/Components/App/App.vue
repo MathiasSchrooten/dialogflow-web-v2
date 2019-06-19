@@ -204,24 +204,25 @@ export default {
     // },
     created(){
         /* If history is enabled, the messages are retrieved from localStorage */
-        if(this.history() && localStorage.getItem('message_history') !== null){
-            this.messages = JSON.parse(localStorage.getItem('message_history'))
-        }
-
-        /* Session should be persistent (in case of page reload, the context should stay) */
-        if(this.history() && localStorage.getItem('session') !== null){
-            this.session = localStorage.getItem('session')
-        }
-
-        else {
-            this.session = uuidv1();
-            if(this.history()) localStorage.setItem('session', this.session)
-        }
-
-        /* Cache Agent (this will save bandwith) */
-        if(this.history() && localStorage.getItem('agent') !== null){
-            this.app = JSON.parse(localStorage.getItem('agent'))
-        }
+        //TODO: uncomment following lines
+        // if(this.history() && localStorage.getItem('message_history') !== null){
+        //     this.messages = JSON.parse(localStorage.getItem('message_history'))
+        // }
+        //
+        // /* Session should be persistent (in case of page reload, the context should stay) */
+        // if(this.history() && localStorage.getItem('session') !== null){
+        //     this.session = localStorage.getItem('session')
+        // }
+        //
+        // else {
+        //     this.session = uuidv1();
+        //     if(this.history()) localStorage.setItem('session', this.session)
+        // }
+        //
+        // /* Cache Agent (this will save bandwith) */
+        // if(this.history() && localStorage.getItem('agent') !== null){
+        //     this.app = JSON.parse(localStorage.getItem('agent'))
+        // }
     },
     computed: {
         /* The code below is used to extract suggestions from last message, to display it on ChatInput */
@@ -248,7 +249,8 @@ export default {
     watch: {
         /* This function is triggered, when new messages arrive */
         messages(messages){
-            if(this.history()) localStorage.setItem('message_history', JSON.stringify(messages)) // <- Save history if the feature is enabled
+            //TODO: uncomment this
+            //if(this.history()) localStorage.setItem('message_history', JSON.stringify(messages)) // <- Save history if the feature is enabled
         },
         /* This function is triggered, when request is started or finished */
         loading(){
@@ -291,7 +293,7 @@ export default {
             this.loading = true;
 
             // Make the request to gateway with formatting enabled */
-            fetch('https://imcc.chatbotkorea.net/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
+            fetch('https://a9209d6b.ngrok.io/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
             .then(response => {
                 console.log("response.json() = ");
                 return response.json();

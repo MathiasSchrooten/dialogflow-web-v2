@@ -3,7 +3,8 @@
         <img v-if="from == 'bot'" style="float: left; padding-top: 10px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
 
         <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
-        {{text}}
+        <template v-for="line in text.split('\n')">{{line}}<br></template>
+            <!--{{text}}-->
         <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
 
             <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
