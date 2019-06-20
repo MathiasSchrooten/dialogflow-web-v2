@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Components/App/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.vue" afterDir="false" />
-    </list>
+    <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -142,10 +140,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="727" />
+    <option name="width" value="1680" />
+    <option name="height" value="976" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -249,16 +247,15 @@
       <workItem from="1560622704023" duration="1466000" />
       <workItem from="1560676124250" duration="1929000" />
       <workItem from="1560689337037" duration="692000" />
-      <workItem from="1560972230857" duration="4034000" />
+      <workItem from="1560972230857" duration="4495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64367000" />
+    <option name="totallyTimeSpent" value="64828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22954726" />
       <window_info anchor="bottom" id="TODO" order="6" />
