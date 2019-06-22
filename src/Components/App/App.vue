@@ -20,19 +20,24 @@
 
                         <td>
                             <!-- Default / Webhook bubble -->
-                            <!--{{component}}-->
-                            <Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />
+                            <!--{{component.pdfUrl}}<br>-->
+                            <!--{{component.mp3url}}<br>-->
+                            <!--{{component.imageUrl}}<br>-->
+                            <!--{{component.videoUrl}}<br>-->
 
-                            <Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'DEFAULT'" />
 
-                            <Bubble from="bot" :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />
+                            <Bubble from="bot" :text="component.content" :mp3url="component.mp3url" :imageUrl="component.imageUrl" :videoUrl="component.videoUrl" :pdfUrl="component.pdfUrl"  v-if="component.name === 'multi'" />
+
+                            <!--<Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />-->
+
+                            <Bubble from="bot" :text="component.content" :mp3url="false" :image-url="false" :video-url="false" :pdf-url="false"  v-if="component.name === 'DEFAULT'" />
+
+                            <!--<Bubble from="bot" :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />-->
 
                             <!--<span v-if="component.name=== 'pdf'">pdf detected {{component.pdfUrl}}</span>-->
-                            <Bubble from="bot" :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />
+                            <!--<Bubble from="bot" :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />-->
 
-
-                            <Bubble from="bot" :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />
-
+                            <!--<Bubble from="bot" :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />-->
 
                             <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble from="bot" :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
@@ -41,7 +46,7 @@
                             <Card from="bot" :title="component.content.title" :subtitle="component.content.subtitle" :image="component.content.image" :text="component.content.formattedText" :button="component.content.buttons[0]" v-if="component.name == 'CARD'" />
                             
                             <!-- Carousel layout and cards -->
-                            <div class="carousel" v-if="component.name == 'CAROUSEL_CARD'">
+                            <div class="carousel" v-if="component.name === 'CAROUSEL_CARD'">
                                 <Card v-for="card in component.content" @click.native="send(card.info.key)" :key="card.info.key" :title="card.title" :image="card.image" :subtitle="card.subtitle" :text="card.description" />
                             </div>
 
@@ -205,24 +210,24 @@ export default {
     created(){
         /* If history is enabled, the messages are retrieved from localStorage */
         //TODO: comment for dev, uncomment following lines for prod
-        if(this.history() && localStorage.getItem('message_history') !== null){
-            this.messages = JSON.parse(localStorage.getItem('message_history'))
-        }
-
-        /* Session should be persistent (in case of page reload, the context should stay) */
-        if(this.history() && localStorage.getItem('session') !== null){
-            this.session = localStorage.getItem('session')
-        }
-
-        else {
-            this.session = uuidv1();
-            if(this.history()) localStorage.setItem('session', this.session)
-        }
-
-        /* Cache Agent (this will save bandwith) */
-        if(this.history() && localStorage.getItem('agent') !== null){
-            this.app = JSON.parse(localStorage.getItem('agent'))
-        }
+        // if(this.history() && localStorage.getItem('message_history') !== null){
+        //     this.messages = JSON.parse(localStorage.getItem('message_history'))
+        // }
+        //
+        // /* Session should be persistent (in case of page reload, the context should stay) */
+        // if(this.history() && localStorage.getItem('session') !== null){
+        //     this.session = localStorage.getItem('session')
+        // }
+        //
+        // else {
+        //     this.session = uuidv1();
+        //     if(this.history()) localStorage.setItem('session', this.session)
+        // }
+        //
+        // /* Cache Agent (this will save bandwith) */
+        // if(this.history() && localStorage.getItem('agent') !== null){
+        //     this.app = JSON.parse(localStorage.getItem('agent'))
+        // }
     },
     computed: {
         /* The code below is used to extract suggestions from last message, to display it on ChatInput */
@@ -250,7 +255,7 @@ export default {
         /* This function is triggered, when new messages arrive */
         messages(messages){
             //TODO: comment this for dev, uncomment for prod
-            if(this.history()) localStorage.setItem('message_history', JSON.stringify(messages)) // <- Save history if the feature is enabled
+            // if(this.history()) localStorage.setItem('message_history', JSON.stringify(messages)) // <- Save history if the feature is enabled
         },
         /* This function is triggered, when request is started or finished */
         loading(){
@@ -293,7 +298,7 @@ export default {
             this.loading = true;
 
             // Make the request to gateway with formatting enabled */
-            fetch('https://imcc.chatbotkorea.net/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
+            fetch('https://54e4ec80.ngrok.io/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
             .then(response => {
                 console.log("response.json() = ");
                 return response.json();

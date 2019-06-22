@@ -1,23 +1,24 @@
 <template>
     <span>
-        <img v-if="from == 'bot'" style="float: left; padding-top: 10px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
+        <img v-if="from === 'bot'" style="float: left; padding-top: 10px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
 
-        <span class="bubble" :class="{'me': from == 'me', 'loading': loading}">
-        <template v-for="line in text.split('\n')">{{line}}<br></template>
-            <!--{{text}}-->
-        <button name="playButton" v-if="from != 'me' && mp3url != null" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
+        <span class="bubble" :class="{'me': from === 'me', 'loading': loading}">
+        <!--<template v-for="line in text.split('\n')">{{line}}<br></template>-->
+            {{text}}
+        <button name="playButton" v-if="from !== 'me' && mp3url != false" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
 
             <img style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
             <!--<audio id="audio" src=""></audio>-->
         </button>
-        <br v-if="imageUrl !== null"/>
-        <img style="margin-top: 15px; width: 100%; max-width: 200px;" v-if="imageUrl != null" v-bind:src="imageUrl" alt="">
+        <br v-if="imageUrl != false && from =='bot'"/>
+        <img style="margin-top: 15px; width: 100%; max-width: 200px;" v-if="imageUrl != false && from =='bot'" v-bind:src="imageUrl" alt="">
 
-        <span style="font-size: 0.8em" v-if="pdfUrl != null">
+        <span style="font-size: 0.8em" v-if="pdfUrl != false && from =='bot'">
+            <br>
             <a v-bind:href="pdfUrl" target="_blank">클릭해서 PDF 보기</a>
         </span>
 
-        <video v-if="videoUrl != null" v-bind:src="videoUrl" id="video-container" style="width:100%;max-width: 300px;" controls></video>
+        <video v-if="videoUrl != false && from =='bot'" v-bind:src="videoUrl" id="video-container" style="width:100%;max-width: 300px;" controls></video>
 
     </span>
         <img v-if="from == 'me'" style="float: right; padding-top: 30px; padding-right: 5px; margin-left: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
@@ -92,7 +93,7 @@
 <script>
 export default {
     name: 'Bubble',
-    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl', 'pdfUrl', 'videoUrl'],
+    props: ['text', 'from', 'loading', 'mp3url', 'imageUrl', 'pdfUrl', 'videoUrl', 'componentName'],
     data: function() {
         return {
             hey: 'hey',
