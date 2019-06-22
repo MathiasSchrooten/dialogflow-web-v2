@@ -19,8 +19,8 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="292" column="50" lean-forward="true" selection-start-line="292" selection-start-column="50" selection-end-line="292" selection-end-column="50" />
+            <state relative-caret-position="152">
+              <caret line="290" column="99" selection-start-line="290" selection-start-column="99" selection-end-line="290" selection-end-column="99" />
               <folding>
                 <element signature="n#style#0;n#!!top" />
                 <element signature="n#style#1;n#!!top" />
@@ -228,12 +228,12 @@
       <workItem from="1560972230857" duration="4495000" />
       <workItem from="1561016942891" duration="114000" />
       <workItem from="1561054474795" duration="6904000" />
-      <workItem from="1561191515618" duration="17725000" />
+      <workItem from="1561191515618" duration="18532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89571000" />
+    <option name="totallyTimeSpent" value="90378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="876" extended-state="6" />
@@ -294,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="292" column="50" lean-forward="true" selection-start-line="292" selection-start-column="50" selection-end-line="292" selection-end-column="50" />
+        <state relative-caret-position="152">
+          <caret line="290" column="99" selection-start-line="290" selection-start-column="99" selection-end-line="290" selection-end-column="99" />
           <folding>
             <element signature="n#style#0;n#!!top" />
             <element signature="n#style#1;n#!!top" />
