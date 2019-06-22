@@ -194,10 +194,10 @@ export default {
             session: '',
             muted: this.config.app.muted,
             loading: false,
-            mp3url: '',
-            imageUrl: '',
-            pdfUrl: '',
-            videoUrl: '',
+            mp3url: false,
+            imageUrl: false,
+            pdfUrl: false,
+            videoUrl: false,
             hey: 'hey'
         };
     },

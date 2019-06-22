@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,20 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="302" column="33" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+            <state relative-caret-position="2685">
+              <caret line="188" column="12" lean-forward="true" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bubble.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bubble.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="116">
+              <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#span#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
@@ -74,8 +75,8 @@
       <find>videoUrl</find>
       <find>pdfU</find>
       <find>split</find>
-      <find>fetch</find>
       <find>suggestions</find>
+      <find>fetch</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/Components/Partials/ChatInput.vue" />
         <option value="$PROJECT_DIR$/src/Components/RichComponents/Suggestion.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" />
         <option value="$PROJECT_DIR$/src/Components/App/App.vue" />
+        <option value="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" />
       </list>
     </option>
   </component>
@@ -223,12 +224,12 @@
       <workItem from="1560972230857" duration="4495000" />
       <workItem from="1561016942891" duration="114000" />
       <workItem from="1561054474795" duration="6904000" />
-      <workItem from="1561191515618" duration="10356000" />
+      <workItem from="1561191515618" duration="11527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82202000" />
+    <option name="totallyTimeSpent" value="83373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="6" />
@@ -266,10 +267,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2685">
+          <caret line="188" column="12" lean-forward="true" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="116">
+          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#img#0;n#span#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
@@ -278,13 +286,6 @@
             <element signature="n#style#0;n#video#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#span#0;n#template#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="302" column="33" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
         </state>
       </provider>
     </entry>
