@@ -28,18 +28,8 @@
 
                             <Bubble from="bot" :text="component.content" :mp3url="component.mp3url" :imageUrl="component.imageUrl" :videoUrl="component.videoUrl" :pdfUrl="component.pdfUrl"  v-if="component.name === 'multi'" />
 
-                            <!--<Bubble from="bot" :text="component.content" :mp3url="component.mp3url"  v-if="component.name === 'MP3'" />-->
-
                             <Bubble from="bot" :text="component.content" :mp3url="false" :image-url="false" :video-url="false" :pdf-url="false"  v-if="component.name === 'DEFAULT'" />
 
-                            <!--<Bubble from="bot" :text="component.content" :imageUrl="component.imageUrl"  v-if="component.name === 'image'" />-->
-
-                            <!--<span v-if="component.name=== 'pdf'">pdf detected {{component.pdfUrl}}</span>-->
-                            <!--<Bubble from="bot" :text="component.content" :pdfUrl="component.pdfUrl"  v-if="component.name === 'pdf'" />-->
-
-                            <!--<Bubble from="bot" :text="component.content" :videoUrl="component.videoUrl" v-if="component.name === 'video'" />-->
-
-                            <!--&lt;!&ndash; Simple Response &ndash;&gt;-->
                             <Bubble from="bot" :text="component.content.displayText || component.content.textToSpeech" v-if="component.name == 'SIMPLE_RESPONSE'" />
 
                             <!-- Card -->
@@ -61,7 +51,7 @@
                 <table class="message" v-if="loading">
                     <tr>
                         <!-- My message (Loading) -->
-                        <td><Bubble from="me" loading="true" /></td>
+                        <td><Bubble from="me" loading="false" /></td>
                     </tr>
                     <tr>
                         <!-- Default / Webhook bubble (Loading) -->
@@ -264,28 +254,28 @@ export default {
                 app.querySelector('#bottom').scrollIntoView({ 
                     behavior: 'smooth' 
                 })
-            }, 2) // <- wait for render (timeout) and then smoothly scroll #app down to #bottom selector, used as anchor
+            }, 1) // <- wait for render (timeout) and then smoothly scroll #app down to #bottom selector, used as anchor
         },
         /* You don't need the function below. It's only for my cloud, to manage the SEO */
-        app(agent){
-            if(window.location.host.includes("cloud.ushakov.co")){
-                document.querySelector("title").innerText = agent.displayName
-                document.querySelector("meta[name=description]").content = agent.description
-                document.querySelector("link[rel=canonical]").href = location.href
-                document.querySelector("meta[name=application-name]").content = agent.displayName
-                document.querySelector("link[rel=icon]").href = agent.avatarUri
-                document.querySelector("link[rel=apple-touch-icon]").href = agent.avatarUri
-                document.querySelector("meta[name=msapplication-TileImage]").content = agent.avatarUri
-                document.querySelector("meta[name=apple-mobile-web-app-title]").content = agent.displayName
-                document.querySelector("meta[property=og\\:title]").content = agent.displayName
-                document.querySelector("meta[property=og\\:image]").content = agent.avatarUri
-                document.querySelector("meta[property=og\\:description]").content = agent.description
-                document.querySelector("meta[property=og\\:url]").content = location.href
-                document.querySelector("meta[name=twitter\\:title]").content = agent.displayName
-                document.querySelector("meta[name=twitter\\:image]").content = agent.avatarUri
-                document.querySelector("meta[name=twitter\\:description]").content = agent.description
-            }
-        }
+        // app(agent){
+        //     if(window.location.host.includes("cloud.ushakov.co")){
+        //         document.querySelector("title").innerText = agent.displayName
+        //         document.querySelector("meta[name=description]").content = agent.description
+        //         document.querySelector("link[rel=canonical]").href = location.href
+        //         document.querySelector("meta[name=application-name]").content = agent.displayName
+        //         document.querySelector("link[rel=icon]").href = agent.avatarUri
+        //         document.querySelector("link[rel=apple-touch-icon]").href = agent.avatarUri
+        //         document.querySelector("meta[name=msapplication-TileImage]").content = agent.avatarUri
+        //         document.querySelector("meta[name=apple-mobile-web-app-title]").content = agent.displayName
+        //         document.querySelector("meta[property=og\\:title]").content = agent.displayName
+        //         document.querySelector("meta[property=og\\:image]").content = agent.avatarUri
+        //         document.querySelector("meta[property=og\\:description]").content = agent.description
+        //         document.querySelector("meta[property=og\\:url]").content = location.href
+        //         document.querySelector("meta[name=twitter\\:title]").content = agent.displayName
+        //         document.querySelector("meta[name=twitter\\:image]").content = agent.avatarUri
+        //         document.querySelector("meta[name=twitter\\:description]").content = agent.description
+        //     }
+        // }
     },
     methods: {
         send(q){
@@ -298,7 +288,7 @@ export default {
             this.loading = true;
 
             // Make the request to gateway with formatting enabled */
-            fetch('https://imcc.chatbotkorea.net/kor/getBotResponse', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
+            fetch('https://imcc.chatbotkorea.net/kor/getBotResponse', {method: 'POST', mode: 'cors', headers: {'content-type': 'application/json'}, body: JSON.stringify(request)})
             .then(response => {
                 console.log("response.json() = ");
                 return response.json();
@@ -306,13 +296,8 @@ export default {
             .then(response => {
                 console.log(response.queryResult.fulfillmentMessages);
                 this.messages.push(response);
-                this.handle(response); // <- trigger the handle function (explanation below)
                 this.loading = false
-                //console.log(response) // <- (optional) log responses
             });
-        },
-        handle(response){
-
         }
     }
 }

@@ -4,7 +4,8 @@
 
         <span class="bubble" :class="{'me': from === 'me', 'loading': loading}">
         <!--<template v-for="line in text.split('\n')">{{line}}<br></template>-->
-            {{text}}
+            <!--{{text}}-->
+            <span style="white-space: pre">{{text}}</span>
         <button name="playButton" v-if="from == 'bot' && mp3url != false" class="btn btn-primary btn-sm" @click.prevent="audio.isPlaying ? pause(audio) : play(audio)" v-for="audio in audios" :key="audio.id"><span class="fa fa-play-circle-o"></span>
 
             <img v-if="mp3url!=false && from == 'bot'" style="width:15px; height:15px;" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/play_alt-512.png" alt="">
