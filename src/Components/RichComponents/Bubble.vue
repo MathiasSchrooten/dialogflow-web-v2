@@ -1,6 +1,7 @@
 <template>
     <span>
-        <img v-if="from === 'bot'" style="float: left; padding-top: 10px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
+        <!--imc image next to bot response-->
+        <img v-if="from === 'bot'" style="float: left; padding-top: 0px; padding-left: 5px; margin-right: 10px; width: 30px; height: 30px; border-radius:15px;" src="https://asldemo.s3-eu-west-1.amazonaws.com/Screenshot+2019-06-10+at+19.53.45.png" alt="">
 
         <span class="bubble" :class="{'me': from === 'me', 'loading': loading}">
         <template v-for="line in text.split('\n')">{{line}}<br></template>
@@ -24,7 +25,8 @@
         </span>
 
     </span>
-        <img v-if="from == 'me'" style="float: right; padding-top: 30px; position: absolute; right: 5%;  width: 30px; height: 30px; border-radius:15px;" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
+        <!--user-image next to user response-->
+        <img v-if="from == 'me'" style="float: right; margin-top: -35px; padding-top: 3px; position: absolute; right: 5%;  width: 30px; height: 30px; border-radius:15px;" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png">
 
     </span>
 
@@ -53,7 +55,7 @@
         margin-left: -1px
 
     &:not(.me)
-        margin-bottom: 10px
+        margin-bottom: 50px
         float: left
 
     &.me
@@ -69,7 +71,7 @@
         background-color: #F1F3F4
         border: 1px solid #F1F3F4
         color: #5F6368
-        margin-top: 24px
+        margin-top: -35px
 
         &::before
             content: ''
