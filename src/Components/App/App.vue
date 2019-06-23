@@ -86,7 +86,7 @@ body
     background-color: white
 
 .container
-    max-width: 800px
+    max-width: 100%
     margin-left: auto
     margin-right: auto
     padding: 16px
@@ -122,6 +122,8 @@ body
 
 .message
     width: 100%
+
+    display: inline-block
 
 
 

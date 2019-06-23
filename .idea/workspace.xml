@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971a0d2a-e1be-4c7d-92a1-675ec78ea2b1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,32 +19,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="290" column="99" selection-start-line="290" selection-start-column="99" selection-end-line="290" selection-end-column="99" />
-              <folding>
-                <element signature="n#style#0;n#!!top" />
-                <element signature="n#style#1;n#!!top" />
-              </folding>
+            <state relative-caret-position="199">
+              <caret line="133" column="2" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bubble.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bubble.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="172">
+              <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#video#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#1;n#span#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#span#2;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#2041#2974#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,7 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>computed</find>
       <find>language</find>
       <find>lang</find>
       <find>methods</find>
@@ -79,8 +76,9 @@
       <find>suggestions</find>
       <find>fetch</find>
       <find>sugg</find>
-      <find>suggestion</find>
       <find>split</find>
+      <find>suggestion</find>
+      <find>video</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,8 +94,8 @@
         <option value="$PROJECT_DIR$/src/Components/Partials/ChatInput.vue" />
         <option value="$PROJECT_DIR$/src/Components/RichComponents/Suggestion.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" />
         <option value="$PROJECT_DIR$/src/Components/App/App.vue" />
+        <option value="$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue" />
       </list>
     </option>
   </component>
@@ -228,26 +226,26 @@
       <workItem from="1560972230857" duration="4495000" />
       <workItem from="1561016942891" duration="114000" />
       <workItem from="1561054474795" duration="6904000" />
-      <workItem from="1561191515618" duration="18532000" />
+      <workItem from="1561191515618" duration="23365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90378000" />
+    <option name="totallyTimeSpent" value="95211000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="876" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="826" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15362932" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3777308" side_tool="true" visible="true" weight="0.32734275" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3777308" side_tool="true" visible="true" weight="0.30864197" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.6222692" visible="true" weight="0.32734275" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.6222692" visible="true" weight="0.30864197" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -276,29 +274,24 @@
         <state relative-caret-position="-78" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue">
+    <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#button#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#video#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#1;n#span#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="199">
+          <caret line="133" column="2" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/App/App.vue">
+    <entry file="file://$PROJECT_DIR$/src/Components/RichComponents/Bubble.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="290" column="99" selection-start-line="290" selection-start-column="99" selection-end-line="290" selection-end-column="99" />
+        <state relative-caret-position="172">
+          <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
           <folding>
-            <element signature="n#style#0;n#!!top" />
-            <element signature="n#style#1;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#button#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#span#2;n#span#0;n#span#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#2041#2974#2" expanded="true" />
           </folding>
         </state>
       </provider>
